@@ -1,0 +1,16 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# misc
+/target/
+
+# testing
+/src/test/
+
+# build
+/nbproject/
+/build.xml
+
+# others
+/manifest.mf
+/nb-configuration.xml
+/nbactions.xml

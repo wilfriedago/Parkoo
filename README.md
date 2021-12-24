@@ -1,3 +1,3 @@
 # Parkoo
 
-Cars inventory managment system build in Java.
+Parkoo Cars Inventory Managment system, build with Java.
