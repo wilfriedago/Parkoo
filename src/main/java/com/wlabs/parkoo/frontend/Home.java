@@ -29,7 +29,6 @@ public class Home extends javax.swing.JFrame {
     private void initComponents() {
 
         navigationContainer = new javax.swing.JPanel();
-        logo = new javax.swing.JLabel();
         linkHome = new javax.swing.JPanel();
         span1 = new javax.swing.JPanel();
         linkHomeText = new javax.swing.JLabel();
@@ -45,9 +44,15 @@ public class Home extends javax.swing.JFrame {
         linkCaissier = new javax.swing.JPanel();
         span5 = new javax.swing.JPanel();
         linkCaissierText = new javax.swing.JLabel();
+        statusContainer = new javax.swing.JPanel();
+        logo = new javax.swing.JLabel();
+        separator = new javax.swing.JPanel();
+        actualPanel = new javax.swing.JLabel();
+        mainContainer = new javax.swing.JPanel();
+        separator2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Parkoo");
+        setTitle("Parkoo - Cars Inventory Managment");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMinimumSize(new java.awt.Dimension(800, 600));
         setName("MainContainer"); // NOI18N
@@ -55,17 +60,13 @@ public class Home extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1024, 700));
 
         navigationContainer.setBackground(new java.awt.Color(61, 118, 202));
+        navigationContainer.setToolTipText("");
         navigationContainer.setMinimumSize(new java.awt.Dimension(150, 100));
         navigationContainer.setPreferredSize(new java.awt.Dimension(150, 700));
-        navigationContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        logo.setFont(new java.awt.Font("Bauhaus 93", 1, 36)); // NOI18N
-        logo.setForeground(new java.awt.Color(255, 255, 255));
-        logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        logo.setText("Parkoo");
-        navigationContainer.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 150, -1));
 
         linkHome.setBackground(new java.awt.Color(79, 134, 214));
+        linkHome.setToolTipText("");
+        linkHome.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         linkHome.setPreferredSize(new java.awt.Dimension(150, 40));
         linkHome.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -89,7 +90,7 @@ public class Home extends javax.swing.JFrame {
 
         linkHomeText.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
         linkHomeText.setForeground(new java.awt.Color(255, 255, 255));
-        linkHomeText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/wlabs/parkoo/frontend/icons/home.png"))); // NOI18N
+        linkHomeText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/wlabs/parkoo/assets/home.png"))); // NOI18N
         linkHomeText.setText("Acceuil");
 
         javax.swing.GroupLayout linkHomeLayout = new javax.swing.GroupLayout(linkHome);
@@ -113,9 +114,9 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        navigationContainer.add(linkHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 150, 40));
-
         linkVoiture.setBackground(new java.awt.Color(61, 118, 202));
+        linkVoiture.setToolTipText("Voir la liste des voitures en stock");
+        linkVoiture.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         linkVoiture.setPreferredSize(new java.awt.Dimension(150, 40));
         linkVoiture.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -140,7 +141,7 @@ public class Home extends javax.swing.JFrame {
 
         linkVoitureText.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
         linkVoitureText.setForeground(new java.awt.Color(255, 255, 255));
-        linkVoitureText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/wlabs/parkoo/frontend/icons/car.png"))); // NOI18N
+        linkVoitureText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/wlabs/parkoo/assets/car.png"))); // NOI18N
         linkVoitureText.setText("Voitures");
 
         javax.swing.GroupLayout linkVoitureLayout = new javax.swing.GroupLayout(linkVoiture);
@@ -164,9 +165,9 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        navigationContainer.add(linkVoiture, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 150, 40));
-
         linkVente.setBackground(new java.awt.Color(61, 118, 202));
+        linkVente.setToolTipText("Voir la liste de toutes les ventes effectuées");
+        linkVente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         linkVente.setPreferredSize(new java.awt.Dimension(150, 40));
         linkVente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -191,7 +192,7 @@ public class Home extends javax.swing.JFrame {
 
         linkVenteText.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
         linkVenteText.setForeground(new java.awt.Color(255, 255, 255));
-        linkVenteText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/wlabs/parkoo/frontend/icons/stack.png"))); // NOI18N
+        linkVenteText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/wlabs/parkoo/assets/stack.png"))); // NOI18N
         linkVenteText.setText("Ventes");
 
         javax.swing.GroupLayout linkVenteLayout = new javax.swing.GroupLayout(linkVente);
@@ -215,9 +216,9 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        navigationContainer.add(linkVente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 150, 40));
-
         linkClient.setBackground(new java.awt.Color(61, 118, 202));
+        linkClient.setToolTipText("Voir la liste des clients");
+        linkClient.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         linkClient.setPreferredSize(new java.awt.Dimension(150, 40));
         linkClient.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -242,7 +243,7 @@ public class Home extends javax.swing.JFrame {
 
         linkClientText.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
         linkClientText.setForeground(new java.awt.Color(255, 255, 255));
-        linkClientText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/wlabs/parkoo/frontend/icons/users.png"))); // NOI18N
+        linkClientText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/wlabs/parkoo/assets/users.png"))); // NOI18N
         linkClientText.setText("Clients");
 
         javax.swing.GroupLayout linkClientLayout = new javax.swing.GroupLayout(linkClient);
@@ -266,9 +267,9 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        navigationContainer.add(linkClient, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 150, 40));
-
         linkCaissier.setBackground(new java.awt.Color(61, 118, 202));
+        linkCaissier.setToolTipText("Voir la liste des caissiers");
+        linkCaissier.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         linkCaissier.setPreferredSize(new java.awt.Dimension(150, 40));
         linkCaissier.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -293,7 +294,7 @@ public class Home extends javax.swing.JFrame {
 
         linkCaissierText.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
         linkCaissierText.setForeground(new java.awt.Color(255, 255, 255));
-        linkCaissierText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/wlabs/parkoo/frontend/icons/user-check.png"))); // NOI18N
+        linkCaissierText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/wlabs/parkoo/assets/user-check.png"))); // NOI18N
         linkCaissierText.setText("Caissiers");
 
         javax.swing.GroupLayout linkCaissierLayout = new javax.swing.GroupLayout(linkCaissier);
@@ -317,7 +318,104 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        navigationContainer.add(linkCaissier, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 150, 40));
+        javax.swing.GroupLayout navigationContainerLayout = new javax.swing.GroupLayout(navigationContainer);
+        navigationContainer.setLayout(navigationContainerLayout);
+        navigationContainerLayout.setHorizontalGroup(
+            navigationContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(linkHome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(linkVoiture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(linkVente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(linkClient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(linkCaissier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        navigationContainerLayout.setVerticalGroup(
+            navigationContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(navigationContainerLayout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(linkHome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(linkVoiture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(linkVente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(linkClient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(linkCaissier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        statusContainer.setBackground(new java.awt.Color(255, 255, 255));
+        statusContainer.setPreferredSize(new java.awt.Dimension(753, 60));
+
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/wlabs/parkoo/assets/logo.png"))); // NOI18N
+
+        separator.setBackground(new java.awt.Color(240, 240, 240));
+        separator.setPreferredSize(new java.awt.Dimension(2, 0));
+
+        javax.swing.GroupLayout separatorLayout = new javax.swing.GroupLayout(separator);
+        separator.setLayout(separatorLayout);
+        separatorLayout.setHorizontalGroup(
+            separatorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+        separatorLayout.setVerticalGroup(
+            separatorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 55, Short.MAX_VALUE)
+        );
+
+        actualPanel.setBackground(new java.awt.Color(49, 49, 49));
+        actualPanel.setFont(new java.awt.Font("Dubai Medium", 0, 16)); // NOI18N
+        actualPanel.setForeground(new java.awt.Color(49, 49, 49));
+        actualPanel.setText("Acceuil");
+
+        javax.swing.GroupLayout statusContainerLayout = new javax.swing.GroupLayout(statusContainer);
+        statusContainer.setLayout(statusContainerLayout);
+        statusContainerLayout.setHorizontalGroup(
+            statusContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(statusContainerLayout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(logo)
+                .addGap(34, 34, 34)
+                .addComponent(separator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(actualPanel))
+        );
+        statusContainerLayout.setVerticalGroup(
+            statusContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(statusContainerLayout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addComponent(logo))
+            .addComponent(separator, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(statusContainerLayout.createSequentialGroup()
+                .addGap(13, 13, 13)
+                .addComponent(actualPanel))
+        );
+
+        mainContainer.setBackground(new java.awt.Color(244, 245, 247));
+
+        separator2.setBackground(new java.awt.Color(240, 240, 240));
+        separator2.setPreferredSize(new java.awt.Dimension(0, 3));
+
+        javax.swing.GroupLayout separator2Layout = new javax.swing.GroupLayout(separator2);
+        separator2.setLayout(separator2Layout);
+        separator2Layout.setHorizontalGroup(
+            separator2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 874, Short.MAX_VALUE)
+        );
+        separator2Layout.setVerticalGroup(
+            separator2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 3, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout mainContainerLayout = new javax.swing.GroupLayout(mainContainer);
+        mainContainer.setLayout(mainContainerLayout);
+        mainContainerLayout.setHorizontalGroup(
+            mainContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(separator2, javax.swing.GroupLayout.PREFERRED_SIZE, 874, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        mainContainerLayout.setVerticalGroup(
+            mainContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(separator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -325,21 +423,29 @@ public class Home extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(navigationContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 871, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addComponent(mainContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(statusContainer, javax.swing.GroupLayout.DEFAULT_SIZE, 1024, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(navigationContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(statusContainer, 55, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(navigationContainer, javax.swing.GroupLayout.DEFAULT_SIZE, 645, Short.MAX_VALUE)
+                    .addComponent(mainContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
-        navigationContainer.getAccessibleContext().setAccessibleName("ActionContainer");
-        navigationContainer.getAccessibleContext().setAccessibleDescription("");
+        navigationContainer.getAccessibleContext().setAccessibleName("Menu de navigation");
+        navigationContainer.getAccessibleContext().setAccessibleDescription("Menu de navigation vers les principales fonctionnalités de parkoo");
 
         getAccessibleContext().setAccessibleDescription("Parkoo cars inventory managment system build by Wlabs.");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //TODO: Fix this, to work properly & imageIcon URL Bug    
     JPanel[] allSpans;
     JPanel[] allLinks;
 
@@ -390,7 +496,7 @@ public class Home extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
+                if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -414,10 +520,15 @@ public class Home extends javax.swing.JFrame {
         });
     }
 
+    /* All methods */
+    //<editor-fold defaultstate="collapsed" desc=" Collections of all methods used in the application ">
+    
+    //Method setColor
     private void setColor(JPanel panel) {
         panel.setBackground(new Color(79, 134, 214));
     }
 
+    //Method resetColor
     private void resetColor(JPanel[] panels, JPanel[] indicators, JPanel currentPanel, JPanel currentIndicator) {
         for (JPanel panel : panels) {
             if (panel.equals(currentPanel)) {
@@ -432,8 +543,19 @@ public class Home extends javax.swing.JFrame {
             indicator.setOpaque(false);
         }
     }
+    
+    //Method switchPanel
+    private void switchPanel(JPanel currentPanel, JPanel targetPanel){
+        //We make the current Panel disappear
+        currentPanel.setVisible(false);
+        //We set the next Panel appear
+        targetPanel.setVisible(true);
+    }
+    
+    //</editor-fold>
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel actualPanel;
     private javax.swing.JPanel linkCaissier;
     private javax.swing.JLabel linkCaissierText;
     private javax.swing.JPanel linkClient;
@@ -445,11 +567,15 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel linkVoiture;
     private javax.swing.JLabel linkVoitureText;
     private javax.swing.JLabel logo;
+    private javax.swing.JPanel mainContainer;
     private javax.swing.JPanel navigationContainer;
+    private javax.swing.JPanel separator;
+    private javax.swing.JPanel separator2;
     private javax.swing.JPanel span1;
     private javax.swing.JPanel span2;
     private javax.swing.JPanel span3;
     private javax.swing.JPanel span4;
     private javax.swing.JPanel span5;
+    private javax.swing.JPanel statusContainer;
     // End of variables declaration//GEN-END:variables
 }

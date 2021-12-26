@@ -64,6 +64,11 @@ public class Voiture {
         this.prixVente = prixVente;
     }
 
+    //Méthode getBenefice, permet de calculer le bénéfice réaliser sur une vente
+    public double getBenefice() {
+        return prixVente - prixAchat;
+    }
+
     //To String Method
     @Override
     public String toString() {

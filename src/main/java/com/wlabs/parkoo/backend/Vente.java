@@ -46,7 +46,7 @@ public class Vente {
         this.prix = prix;
     }
 
-    //To String Method
+    //Méthode toString
     @Override
     public String toString() {
         return "Vente{" + "id=" + id + ", dateVente=" + dateVente + ", prix=" + prix + '}';
