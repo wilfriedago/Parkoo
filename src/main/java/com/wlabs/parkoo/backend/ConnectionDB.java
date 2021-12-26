@@ -17,13 +17,13 @@ public class ConnectionDB {
     protected static Connection connection;
 
     public static Connection getInstance() {
-        if (connection == null) {
-            try {
+        try {
+            if (connection == null) {
                 connection = DriverManager.getConnection(URL, USER, PASSWD);
                 System.out.println("Sucessfully connected to the database !");
-            } catch (SQLException e) {
-                System.out.println("Unable to connect to the database !");
             }
+        } catch (SQLException e) {
+            System.out.println("Unable to connect to the database ! \n" + e);
         }
         return connection;
     }

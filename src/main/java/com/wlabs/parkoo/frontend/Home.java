@@ -1,5 +1,8 @@
 package com.wlabs.parkoo.frontend;
 
+import java.awt.Color;
+import javax.swing.JPanel;
+
 /**
  * @licence MIT Licence
  * @author Wilfried AGO
@@ -11,6 +14,8 @@ public class Home extends javax.swing.JFrame {
      * Creates new form Home
      */
     public Home() {
+        this.allSpans = new JPanel[]{span1, span2, span3, span4, span5};
+        this.allLinks = new JPanel[]{linkHome, linkVoiture, linkVente, linkClient, linkCaissier};
         initComponents();
     }
 
@@ -23,21 +28,356 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        navigationContainer = new javax.swing.JPanel();
+        logo = new javax.swing.JLabel();
+        linkHome = new javax.swing.JPanel();
+        span1 = new javax.swing.JPanel();
+        linkHomeText = new javax.swing.JLabel();
+        linkVoiture = new javax.swing.JPanel();
+        span2 = new javax.swing.JPanel();
+        linkVoitureText = new javax.swing.JLabel();
+        linkVente = new javax.swing.JPanel();
+        span3 = new javax.swing.JPanel();
+        linkVenteText = new javax.swing.JLabel();
+        linkClient = new javax.swing.JPanel();
+        span4 = new javax.swing.JPanel();
+        linkClientText = new javax.swing.JLabel();
+        linkCaissier = new javax.swing.JPanel();
+        span5 = new javax.swing.JPanel();
+        linkCaissierText = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Parkoo");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setMinimumSize(new java.awt.Dimension(800, 600));
+        setName("MainContainer"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(1024, 700));
+        setSize(new java.awt.Dimension(1024, 700));
+
+        navigationContainer.setBackground(new java.awt.Color(61, 118, 202));
+        navigationContainer.setMinimumSize(new java.awt.Dimension(150, 100));
+        navigationContainer.setPreferredSize(new java.awt.Dimension(150, 700));
+        navigationContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        logo.setFont(new java.awt.Font("Bauhaus 93", 1, 36)); // NOI18N
+        logo.setForeground(new java.awt.Color(255, 255, 255));
+        logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logo.setText("Parkoo");
+        navigationContainer.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 150, -1));
+
+        linkHome.setBackground(new java.awt.Color(79, 134, 214));
+        linkHome.setPreferredSize(new java.awt.Dimension(150, 40));
+        linkHome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                linkHomeMousePressed(evt);
+            }
+        });
+
+        span1.setBackground(new java.awt.Color(255, 255, 255));
+        span1.setPreferredSize(new java.awt.Dimension(3, 40));
+
+        javax.swing.GroupLayout span1Layout = new javax.swing.GroupLayout(span1);
+        span1.setLayout(span1Layout);
+        span1Layout.setHorizontalGroup(
+            span1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 3, Short.MAX_VALUE)
+        );
+        span1Layout.setVerticalGroup(
+            span1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+
+        linkHomeText.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
+        linkHomeText.setForeground(new java.awt.Color(255, 255, 255));
+        linkHomeText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/wlabs/parkoo/frontend/icons/home.png"))); // NOI18N
+        linkHomeText.setText("Acceuil");
+
+        javax.swing.GroupLayout linkHomeLayout = new javax.swing.GroupLayout(linkHome);
+        linkHome.setLayout(linkHomeLayout);
+        linkHomeLayout.setHorizontalGroup(
+            linkHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(linkHomeLayout.createSequentialGroup()
+                .addComponent(span1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(linkHomeText)
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
+        linkHomeLayout.setVerticalGroup(
+            linkHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(linkHomeLayout.createSequentialGroup()
+                .addComponent(span1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(linkHomeLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(linkHomeText)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        navigationContainer.add(linkHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 150, 40));
+
+        linkVoiture.setBackground(new java.awt.Color(61, 118, 202));
+        linkVoiture.setPreferredSize(new java.awt.Dimension(150, 40));
+        linkVoiture.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                linkVoitureMousePressed(evt);
+            }
+        });
+
+        span2.setBackground(new java.awt.Color(255, 255, 255));
+        span2.setOpaque(false);
+        span2.setPreferredSize(new java.awt.Dimension(3, 40));
+
+        javax.swing.GroupLayout span2Layout = new javax.swing.GroupLayout(span2);
+        span2.setLayout(span2Layout);
+        span2Layout.setHorizontalGroup(
+            span2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 3, Short.MAX_VALUE)
+        );
+        span2Layout.setVerticalGroup(
+            span2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+
+        linkVoitureText.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
+        linkVoitureText.setForeground(new java.awt.Color(255, 255, 255));
+        linkVoitureText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/wlabs/parkoo/frontend/icons/car.png"))); // NOI18N
+        linkVoitureText.setText("Voitures");
+
+        javax.swing.GroupLayout linkVoitureLayout = new javax.swing.GroupLayout(linkVoiture);
+        linkVoiture.setLayout(linkVoitureLayout);
+        linkVoitureLayout.setHorizontalGroup(
+            linkVoitureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(linkVoitureLayout.createSequentialGroup()
+                .addComponent(span2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(linkVoitureText)
+                .addGap(45, 45, 45))
+        );
+        linkVoitureLayout.setVerticalGroup(
+            linkVoitureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(linkVoitureLayout.createSequentialGroup()
+                .addComponent(span2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(linkVoitureLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(linkVoitureText)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        navigationContainer.add(linkVoiture, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 150, 40));
+
+        linkVente.setBackground(new java.awt.Color(61, 118, 202));
+        linkVente.setPreferredSize(new java.awt.Dimension(150, 40));
+        linkVente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                linkVenteMousePressed(evt);
+            }
+        });
+
+        span3.setBackground(new java.awt.Color(255, 255, 255));
+        span3.setOpaque(false);
+        span3.setPreferredSize(new java.awt.Dimension(3, 40));
+
+        javax.swing.GroupLayout span3Layout = new javax.swing.GroupLayout(span3);
+        span3.setLayout(span3Layout);
+        span3Layout.setHorizontalGroup(
+            span3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 3, Short.MAX_VALUE)
+        );
+        span3Layout.setVerticalGroup(
+            span3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+
+        linkVenteText.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
+        linkVenteText.setForeground(new java.awt.Color(255, 255, 255));
+        linkVenteText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/wlabs/parkoo/frontend/icons/stack.png"))); // NOI18N
+        linkVenteText.setText("Ventes");
+
+        javax.swing.GroupLayout linkVenteLayout = new javax.swing.GroupLayout(linkVente);
+        linkVente.setLayout(linkVenteLayout);
+        linkVenteLayout.setHorizontalGroup(
+            linkVenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(linkVenteLayout.createSequentialGroup()
+                .addComponent(span3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(linkVenteText)
+                .addContainerGap(56, Short.MAX_VALUE))
+        );
+        linkVenteLayout.setVerticalGroup(
+            linkVenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(linkVenteLayout.createSequentialGroup()
+                .addComponent(span3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, linkVenteLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(linkVenteText)
+                .addContainerGap())
+        );
+
+        navigationContainer.add(linkVente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 150, 40));
+
+        linkClient.setBackground(new java.awt.Color(61, 118, 202));
+        linkClient.setPreferredSize(new java.awt.Dimension(150, 40));
+        linkClient.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                linkClientMousePressed(evt);
+            }
+        });
+
+        span4.setBackground(new java.awt.Color(255, 255, 255));
+        span4.setOpaque(false);
+        span4.setPreferredSize(new java.awt.Dimension(3, 40));
+
+        javax.swing.GroupLayout span4Layout = new javax.swing.GroupLayout(span4);
+        span4.setLayout(span4Layout);
+        span4Layout.setHorizontalGroup(
+            span4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 3, Short.MAX_VALUE)
+        );
+        span4Layout.setVerticalGroup(
+            span4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+
+        linkClientText.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
+        linkClientText.setForeground(new java.awt.Color(255, 255, 255));
+        linkClientText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/wlabs/parkoo/frontend/icons/users.png"))); // NOI18N
+        linkClientText.setText("Clients");
+
+        javax.swing.GroupLayout linkClientLayout = new javax.swing.GroupLayout(linkClient);
+        linkClient.setLayout(linkClientLayout);
+        linkClientLayout.setHorizontalGroup(
+            linkClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(linkClientLayout.createSequentialGroup()
+                .addComponent(span4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(linkClientText)
+                .addContainerGap(56, Short.MAX_VALUE))
+        );
+        linkClientLayout.setVerticalGroup(
+            linkClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(linkClientLayout.createSequentialGroup()
+                .addComponent(span4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, linkClientLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(linkClientText)
+                .addContainerGap())
+        );
+
+        navigationContainer.add(linkClient, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 150, 40));
+
+        linkCaissier.setBackground(new java.awt.Color(61, 118, 202));
+        linkCaissier.setPreferredSize(new java.awt.Dimension(150, 40));
+        linkCaissier.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                linkCaissierMousePressed(evt);
+            }
+        });
+
+        span5.setBackground(new java.awt.Color(255, 255, 255));
+        span5.setOpaque(false);
+        span5.setPreferredSize(new java.awt.Dimension(3, 40));
+
+        javax.swing.GroupLayout span5Layout = new javax.swing.GroupLayout(span5);
+        span5.setLayout(span5Layout);
+        span5Layout.setHorizontalGroup(
+            span5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 3, Short.MAX_VALUE)
+        );
+        span5Layout.setVerticalGroup(
+            span5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+
+        linkCaissierText.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
+        linkCaissierText.setForeground(new java.awt.Color(255, 255, 255));
+        linkCaissierText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/wlabs/parkoo/frontend/icons/user-check.png"))); // NOI18N
+        linkCaissierText.setText("Caissiers");
+
+        javax.swing.GroupLayout linkCaissierLayout = new javax.swing.GroupLayout(linkCaissier);
+        linkCaissier.setLayout(linkCaissierLayout);
+        linkCaissierLayout.setHorizontalGroup(
+            linkCaissierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(linkCaissierLayout.createSequentialGroup()
+                .addComponent(span5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(linkCaissierText)
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+        linkCaissierLayout.setVerticalGroup(
+            linkCaissierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(linkCaissierLayout.createSequentialGroup()
+                .addComponent(span5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(linkCaissierLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(linkCaissierText)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        navigationContainer.add(linkCaissier, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 150, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(navigationContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 871, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(navigationContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        navigationContainer.getAccessibleContext().setAccessibleName("ActionContainer");
+        navigationContainer.getAccessibleContext().setAccessibleDescription("");
+
+        getAccessibleContext().setAccessibleDescription("Parkoo cars inventory managment system build by Wlabs.");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    JPanel[] allSpans;
+    JPanel[] allLinks;
+
+
+    private void linkHomeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_linkHomeMousePressed
+        // TODO add your handling code here:
+        setColor(linkHome);
+        span1.setOpaque(true);
+        resetColor(allLinks, allSpans, linkHome, span1);
+    }//GEN-LAST:event_linkHomeMousePressed
+
+    private void linkVoitureMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_linkVoitureMousePressed
+        // TODO add your handling code here:
+        setColor(linkVoiture);
+        span2.setOpaque(true);
+        resetColor(allLinks, allSpans, linkVoiture, span2);
+    }//GEN-LAST:event_linkVoitureMousePressed
+
+    private void linkVenteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_linkVenteMousePressed
+        // TODO add your handling code here:
+        setColor(linkVente);
+        span3.setOpaque(true);
+        resetColor(allLinks, allSpans, linkVente, span3);
+    }//GEN-LAST:event_linkVenteMousePressed
+
+    private void linkClientMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_linkClientMousePressed
+        // TODO add your handling code here:
+        setColor(linkClient);
+        span4.setOpaque(true);
+        resetColor(allLinks, allSpans, linkClient, span4);
+    }//GEN-LAST:event_linkClientMousePressed
+
+    private void linkCaissierMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_linkCaissierMousePressed
+        // TODO add your handling code here:
+        setColor(linkCaissier);
+        span5.setOpaque(true);
+        resetColor(allLinks, allSpans, linkCaissier, span5);
+    }//GEN-LAST:event_linkCaissierMousePressed
 
     /**
      * @param args the command line arguments
@@ -50,7 +390,7 @@ public class Home extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -74,6 +414,42 @@ public class Home extends javax.swing.JFrame {
         });
     }
 
+    private void setColor(JPanel panel) {
+        panel.setBackground(new Color(79, 134, 214));
+    }
+
+    private void resetColor(JPanel[] panels, JPanel[] indicators, JPanel currentPanel, JPanel currentIndicator) {
+        for (JPanel panel : panels) {
+            if (panel.equals(currentPanel)) {
+                continue;
+            }
+            panel.setBackground(new Color(61, 118, 202));
+        }
+        for (JPanel indicator : indicators) {
+            if (indicator.equals(currentIndicator)) {
+                continue;
+            }
+            indicator.setOpaque(false);
+        }
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel linkCaissier;
+    private javax.swing.JLabel linkCaissierText;
+    private javax.swing.JPanel linkClient;
+    private javax.swing.JLabel linkClientText;
+    private javax.swing.JPanel linkHome;
+    private javax.swing.JLabel linkHomeText;
+    private javax.swing.JPanel linkVente;
+    private javax.swing.JLabel linkVenteText;
+    private javax.swing.JPanel linkVoiture;
+    private javax.swing.JLabel linkVoitureText;
+    private javax.swing.JLabel logo;
+    private javax.swing.JPanel navigationContainer;
+    private javax.swing.JPanel span1;
+    private javax.swing.JPanel span2;
+    private javax.swing.JPanel span3;
+    private javax.swing.JPanel span4;
+    private javax.swing.JPanel span5;
     // End of variables declaration//GEN-END:variables
 }
