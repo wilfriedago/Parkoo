@@ -11,5 +11,5 @@
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
     <name>Parkoo</name>
-    <description>Cars inventory Managment System, buid by Wilfried AGO</description>
+    <description>Cars inventory Management System, buid by Wilfried AGO</description>
 </project>

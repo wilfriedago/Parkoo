@@ -1,28 +1,30 @@
 package com.wlabs.parkoo.backend;
 
+import java.util.Date;
+
 /**
  * @licence MIT Licence
  * @author Wilfried AGO
  * @email wilfriedago@pm.me
  */
-public class Client {
+public class Client extends Vente {
 
-    private Integer id;
+    private Integer idCl;
     private String name;
     private String email;
     private String telephone;
 
-    //Class Constructor
-    public Client(Integer id, String name, String email, String telephone) {
-        this.id = id;
+    public Client(Integer idCl, String name, String email, String telephone, String idVe, Date dateVente, double prix) {
+        super(idVe, dateVente, prix);
+        this.idCl = idCl;
         this.name = name;
         this.email = email;
         this.telephone = telephone;
     }
 
     //Getters
-    public Integer getId() {
-        return id;
+    public Integer getIdCl() {
+        return idCl;
     }
 
     public String getName() {
@@ -38,8 +40,8 @@ public class Client {
     }
 
     //Setters
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdCl(Integer idCl) {
+        this.idCl = idCl;
     }
 
     public void setName(String name) {
@@ -52,12 +54,6 @@ public class Client {
 
     public void setTelephone(String telephone) {
         this.telephone = telephone;
-    }
-
-    //To String Method
-    @Override
-    public String toString() {
-        return "Client{" + "id=" + id + ", name=" + name + ", email=" + email + ", telephone=" + telephone + '}';
     }
 
 }

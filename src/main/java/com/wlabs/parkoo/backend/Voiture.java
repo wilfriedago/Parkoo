@@ -1,5 +1,6 @@
 package com.wlabs.parkoo.backend;
 
+
 /**
  * @licence MIT Licence
  * @author Wilfried AGO
@@ -9,14 +10,16 @@ public class Voiture {
 
     private String numSerie;
     private String marque;
+    private String modele;
     private String couleur;
     private double prixAchat;
     private double prixVente;
 
-    //Class Constructor
-    public Voiture(String numSerie, String marque, String couleur, double prixAchat, double prixVente) {
+    //Constructor
+    public Voiture(String numSerie, String marque, String modele, String couleur, double prixAchat, double prixVente) {
         this.numSerie = numSerie;
         this.marque = marque;
+        this.modele = modele;
         this.couleur = couleur;
         this.prixAchat = prixAchat;
         this.prixVente = prixVente;
@@ -29,6 +32,10 @@ public class Voiture {
 
     public String getMarque() {
         return marque;
+    }
+
+    public String getModele() {
+        return modele;
     }
 
     public String getCouleur() {
@@ -52,6 +59,10 @@ public class Voiture {
         this.marque = marque;
     }
 
+    public void setModele(String modele) {
+        this.modele = modele;
+    }
+
     public void setCouleur(String couleur) {
         this.couleur = couleur;
     }
@@ -64,15 +75,15 @@ public class Voiture {
         this.prixVente = prixVente;
     }
 
-    //Méthode getBenefice, permet de calculer le bénéfice réaliser sur une vente
-    public double getBenefice() {
-        return prixVente - prixAchat;
-    }
-
-    //To String Method
+    //Methods
     @Override
     public String toString() {
-        return "Voiture{" + "numSerie=" + numSerie + ", marque=" + marque + ", couleur=" + couleur + ", prixAchat=" + prixAchat + ", prixVente=" + prixVente + '}';
+        return "NumSerie : " + numSerie
+                + "\n Marque : " + marque
+                + "\n Modele : " + modele
+                + "\n Couleur : " + couleur
+                + "\n PrixAchat : " + prixAchat
+                + "\n PrixVente : " + prixVente;
     }
 
 }

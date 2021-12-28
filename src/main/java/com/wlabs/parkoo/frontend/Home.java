@@ -1,5 +1,9 @@
 package com.wlabs.parkoo.frontend;
 
+//Custom package
+import com.wlabs.parkoo.backend.*;
+
+//Java package
 import java.awt.Color;
 import javax.swing.JPanel;
 
@@ -51,10 +55,24 @@ public class Home extends javax.swing.JFrame {
         mainContainer = new javax.swing.JPanel();
         separator2 = new javax.swing.JPanel();
         separator3 = new javax.swing.JSeparator();
-        jPanel1 = new javax.swing.JPanel();
-        addVehicule = new javax.swing.JButton();
-        searchVehiculeField = new javax.swing.JTextField();
         searchVehiculeLabel = new javax.swing.JLabel();
+        searchVehiculeField = new javax.swing.JTextField();
+        searchVehiculeButton = new javax.swing.JButton();
+        makeResult = new javax.swing.JButton();
+        addVehicule = new javax.swing.JButton();
+        mainActionContainer = new javax.swing.JPanel();
+        actionVoiture = new javax.swing.JPanel();
+        actionDescription = new javax.swing.JLabel();
+        actionDetails = new javax.swing.JLabel();
+        actionVente = new javax.swing.JPanel();
+        actionDescription1 = new javax.swing.JLabel();
+        actionDetails1 = new javax.swing.JLabel();
+        actionClient = new javax.swing.JPanel();
+        actionDescription2 = new javax.swing.JLabel();
+        actionDetails2 = new javax.swing.JLabel();
+        actionCaissier = new javax.swing.JPanel();
+        actionDescription3 = new javax.swing.JLabel();
+        actionDetails3 = new javax.swing.JLabel();
         MenuBar = new javax.swing.JMenuBar();
         menuFichier = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -77,6 +95,7 @@ public class Home extends javax.swing.JFrame {
         navigationContainer.setToolTipText("");
         navigationContainer.setMinimumSize(new java.awt.Dimension(150, 100));
         navigationContainer.setPreferredSize(new java.awt.Dimension(150, 700));
+        navigationContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         linkHome.setBackground(new java.awt.Color(79, 134, 214));
         linkHome.setToolTipText("");
@@ -127,6 +146,8 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(linkHomeText)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        navigationContainer.add(linkHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 63, -1, -1));
 
         linkVoiture.setBackground(new java.awt.Color(61, 118, 202));
         linkVoiture.setToolTipText("Voir la liste des voitures en stock");
@@ -179,6 +200,8 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        navigationContainer.add(linkVoiture, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 103, -1, -1));
+
         linkVente.setBackground(new java.awt.Color(61, 118, 202));
         linkVente.setToolTipText("Voir la liste de toutes les ventes effectuées");
         linkVente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -229,6 +252,8 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(linkVenteText)
                 .addContainerGap())
         );
+
+        navigationContainer.add(linkVente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 143, -1, -1));
 
         linkClient.setBackground(new java.awt.Color(61, 118, 202));
         linkClient.setToolTipText("Voir la liste des clients");
@@ -281,6 +306,8 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        navigationContainer.add(linkClient, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 183, -1, -1));
+
         linkCaissier.setBackground(new java.awt.Color(61, 118, 202));
         linkCaissier.setToolTipText("Voir la liste des caissiers");
         linkCaissier.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -332,36 +359,14 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout navigationContainerLayout = new javax.swing.GroupLayout(navigationContainer);
-        navigationContainer.setLayout(navigationContainerLayout);
-        navigationContainerLayout.setHorizontalGroup(
-            navigationContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(linkHome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(linkVoiture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(linkVente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(linkClient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(linkCaissier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        navigationContainerLayout.setVerticalGroup(
-            navigationContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(navigationContainerLayout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addComponent(linkHome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(linkVoiture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(linkVente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(linkClient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(linkCaissier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(359, Short.MAX_VALUE))
-        );
+        navigationContainer.add(linkCaissier, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 223, -1, -1));
 
         statusContainer.setBackground(new java.awt.Color(255, 255, 255));
         statusContainer.setPreferredSize(new java.awt.Dimension(753, 60));
+        statusContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/wlabs/parkoo/frontend/assets/icons/logo.png"))); // NOI18N
+        statusContainer.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 9, -1, -1));
 
         separator.setBackground(new java.awt.Color(240, 240, 240));
         separator.setPreferredSize(new java.awt.Dimension(2, 0));
@@ -377,36 +382,17 @@ public class Home extends javax.swing.JFrame {
             .addGap(0, 55, Short.MAX_VALUE)
         );
 
+        statusContainer.add(separator, new org.netbeans.lib.awtextra.AbsoluteConstraints(148, 0, -1, 55));
+
         actualPanel.setBackground(new java.awt.Color(49, 49, 49));
         actualPanel.setFont(new java.awt.Font("Dubai Medium", 0, 16)); // NOI18N
         actualPanel.setForeground(new java.awt.Color(49, 49, 49));
         actualPanel.setText("Acceuil");
+        statusContainer.add(actualPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 13, -1, -1));
 
-        javax.swing.GroupLayout statusContainerLayout = new javax.swing.GroupLayout(statusContainer);
-        statusContainer.setLayout(statusContainerLayout);
-        statusContainerLayout.setHorizontalGroup(
-            statusContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(statusContainerLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(logo)
-                .addGap(34, 34, 34)
-                .addComponent(separator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(actualPanel))
-        );
-        statusContainerLayout.setVerticalGroup(
-            statusContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(statusContainerLayout.createSequentialGroup()
-                .addGap(9, 9, 9)
-                .addComponent(logo))
-            .addComponent(separator, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(statusContainerLayout.createSequentialGroup()
-                .addGap(13, 13, 13)
-                .addComponent(actualPanel))
-        );
-
-        mainContainer.setBackground(new java.awt.Color(247, 249, 253));
-        mainContainer.setForeground(new java.awt.Color(247, 249, 253));
+        mainContainer.setBackground(new java.awt.Color(244, 245, 247));
+        mainContainer.setForeground(new java.awt.Color(244, 245, 247));
+        mainContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         separator2.setBackground(new java.awt.Color(240, 240, 240));
         separator2.setPreferredSize(new java.awt.Dimension(800, 2));
@@ -415,36 +401,69 @@ public class Home extends javax.swing.JFrame {
         separator2.setLayout(separator2Layout);
         separator2Layout.setHorizontalGroup(
             separator2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 874, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         separator2Layout.setVerticalGroup(
             separator2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 2, Short.MAX_VALUE)
         );
 
+        mainContainer.add(separator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 874, -1));
+
         separator3.setBackground(new java.awt.Color(240, 240, 240));
         separator3.setForeground(new java.awt.Color(187, 187, 187));
+        mainContainer.add(separator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 122, 862, 10));
 
-        jPanel1.setBackground(new java.awt.Color(250, 253, 255));
-        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(164, 206, 255), 2, true));
+        searchVehiculeLabel.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        searchVehiculeLabel.setForeground(new java.awt.Color(129, 138, 148));
+        searchVehiculeLabel.setText("Rechercher un vehicule");
+        mainContainer.add(searchVehiculeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 39, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
+        searchVehiculeField.setBackground(new java.awt.Color(255, 255, 255));
+        searchVehiculeField.setFont(new java.awt.Font("Dubai", 0, 15)); // NOI18N
+        searchVehiculeField.setForeground(new java.awt.Color(129, 138, 148));
+        searchVehiculeField.setToolTipText("Rechercher un vehicule grace à son numéro de série");
+        searchVehiculeField.setName("Rechercher un vehicule"); // NOI18N
+        searchVehiculeField.setPreferredSize(new java.awt.Dimension(190, 35));
+        mainContainer.add(searchVehiculeField, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 69, 332, -1));
+        searchVehiculeField.getAccessibleContext().setAccessibleName("Rechercher un vehicule");
+
+        searchVehiculeButton.setBackground(new java.awt.Color(61, 118, 202));
+        searchVehiculeButton.setForeground(new java.awt.Color(255, 255, 255));
+        searchVehiculeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/wlabs/parkoo/frontend/assets/icons/search.png"))); // NOI18N
+        searchVehiculeButton.setToolTipText("Rechercher un vehicule grace à son numéro de série");
+        searchVehiculeButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(61, 118, 202), 1, true));
+        searchVehiculeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        searchVehiculeButton.setPreferredSize(new java.awt.Dimension(35, 35));
+        searchVehiculeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchVehiculeButtonActionPerformed(evt);
+            }
+        });
+        mainContainer.add(searchVehiculeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 69, -1, -1));
+
+        makeResult.setBackground(new java.awt.Color(255, 255, 255));
+        makeResult.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
+        makeResult.setForeground(new java.awt.Color(61, 118, 202));
+        makeResult.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/wlabs/parkoo/frontend/assets/icons/result.png"))); // NOI18N
+        makeResult.setText("Faire le bilan");
+        makeResult.setToolTipText("Effectuer le bilan, et visualiser les bénéfices");
+        makeResult.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(61, 118, 202), 1, true));
+        makeResult.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        makeResult.setIconTextGap(5);
+        makeResult.setMargin(new java.awt.Insets(4, 10, 4, 16));
+        makeResult.setName(""); // NOI18N
+        makeResult.setPreferredSize(new java.awt.Dimension(150, 35));
+        makeResult.setRequestFocusEnabled(false);
+        makeResult.setVerifyInputWhenFocusTarget(false);
+        mainContainer.add(makeResult, new org.netbeans.lib.awtextra.AbsoluteConstraints(522, 69, -1, -1));
 
         addVehicule.setBackground(new java.awt.Color(61, 118, 202));
         addVehicule.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
         addVehicule.setForeground(new java.awt.Color(255, 255, 255));
         addVehicule.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/wlabs/parkoo/frontend/assets/icons/plus.png"))); // NOI18N
         addVehicule.setText("Enregistrer un vehicule");
-        addVehicule.setToolTipText("");
+        addVehicule.setToolTipText("Enregistrer un nouveau véhicule dans la BDD");
         addVehicule.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(61, 118, 202), 1, true));
         addVehicule.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addVehicule.setIconTextGap(5);
@@ -453,60 +472,194 @@ public class Home extends javax.swing.JFrame {
         addVehicule.setPreferredSize(new java.awt.Dimension(190, 35));
         addVehicule.setRequestFocusEnabled(false);
         addVehicule.setVerifyInputWhenFocusTarget(false);
+        addVehicule.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                addVehiculeMousePressed(evt);
+            }
+        });
+        mainContainer.add(addVehicule, new org.netbeans.lib.awtextra.AbsoluteConstraints(678, 69, -1, -1));
 
-        searchVehiculeField.setBackground(new java.awt.Color(255, 255, 255));
-        searchVehiculeField.setFont(new java.awt.Font("Dubai", 0, 15)); // NOI18N
-        searchVehiculeField.setForeground(new java.awt.Color(129, 138, 148));
-        searchVehiculeField.setToolTipText("Rechercher un vehicule grace à son numéro de série");
-        searchVehiculeField.setName("Rechercher un vehicule"); // NOI18N
-        searchVehiculeField.setPreferredSize(new java.awt.Dimension(190, 35));
+        mainActionContainer.setBackground(new java.awt.Color(244, 245, 247));
+        mainActionContainer.setForeground(new java.awt.Color(244, 245, 247));
 
-        searchVehiculeLabel.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
-        searchVehiculeLabel.setForeground(new java.awt.Color(129, 138, 148));
-        searchVehiculeLabel.setText("Rechercher un vehicule");
+        actionVoiture.setBackground(new java.awt.Color(250, 253, 255));
+        actionVoiture.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(164, 206, 255), 1, true));
+        actionVoiture.setForeground(new java.awt.Color(164, 206, 255));
+        actionVoiture.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        actionVoiture.setPreferredSize(new java.awt.Dimension(180, 130));
 
-        javax.swing.GroupLayout mainContainerLayout = new javax.swing.GroupLayout(mainContainer);
-        mainContainer.setLayout(mainContainerLayout);
-        mainContainerLayout.setHorizontalGroup(
-            mainContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(separator2, javax.swing.GroupLayout.DEFAULT_SIZE, 874, Short.MAX_VALUE)
-            .addGroup(mainContainerLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(mainContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(mainContainerLayout.createSequentialGroup()
-                        .addGroup(mainContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(separator3, javax.swing.GroupLayout.DEFAULT_SIZE, 862, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainContainerLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addContainerGap())
-                    .addGroup(mainContainerLayout.createSequentialGroup()
-                        .addComponent(searchVehiculeField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(addVehicule, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24))
-                    .addGroup(mainContainerLayout.createSequentialGroup()
-                        .addComponent(searchVehiculeLabel)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+        actionDescription.setBackground(new java.awt.Color(255, 255, 255));
+        actionDescription.setFont(new java.awt.Font("Montserrat SemiBold", 0, 14)); // NOI18N
+        actionDescription.setForeground(new java.awt.Color(118, 130, 142));
+        actionDescription.setText("Voitures");
+
+        actionDetails.setFont(new java.awt.Font("Montserrat", 0, 13)); // NOI18N
+        actionDetails.setForeground(new java.awt.Color(118, 130, 142));
+        actionDetails.setText("202 Voiture(s) en stock");
+
+        javax.swing.GroupLayout actionVoitureLayout = new javax.swing.GroupLayout(actionVoiture);
+        actionVoiture.setLayout(actionVoitureLayout);
+        actionVoitureLayout.setHorizontalGroup(
+            actionVoitureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(actionVoitureLayout.createSequentialGroup()
+                .addContainerGap(27, Short.MAX_VALUE)
+                .addGroup(actionVoitureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(actionDetails)
+                    .addComponent(actionDescription))
+                .addContainerGap())
         );
-        mainContainerLayout.setVerticalGroup(
-            mainContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mainContainerLayout.createSequentialGroup()
-                .addComponent(separator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
-                .addComponent(searchVehiculeLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(mainContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addVehicule, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(searchVehiculeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(separator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        actionVoitureLayout.setVerticalGroup(
+            actionVoitureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(actionVoitureLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(actionDescription)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addComponent(actionDetails)
                 .addContainerGap())
         );
 
-        searchVehiculeField.getAccessibleContext().setAccessibleName("Rechercher un vehicule");
+        actionVente.setBackground(new java.awt.Color(250, 253, 255));
+        actionVente.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(164, 206, 255), 1, true));
+        actionVente.setForeground(new java.awt.Color(164, 206, 255));
+        actionVente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        actionVente.setPreferredSize(new java.awt.Dimension(180, 130));
+
+        actionDescription1.setBackground(new java.awt.Color(255, 255, 255));
+        actionDescription1.setFont(new java.awt.Font("Montserrat SemiBold", 0, 14)); // NOI18N
+        actionDescription1.setForeground(new java.awt.Color(118, 130, 142));
+        actionDescription1.setText("Ventes");
+
+        actionDetails1.setFont(new java.awt.Font("Montserrat", 0, 13)); // NOI18N
+        actionDetails1.setForeground(new java.awt.Color(118, 130, 142));
+        actionDetails1.setText("22 Vente(s) effectuées");
+
+        javax.swing.GroupLayout actionVenteLayout = new javax.swing.GroupLayout(actionVente);
+        actionVente.setLayout(actionVenteLayout);
+        actionVenteLayout.setHorizontalGroup(
+            actionVenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(actionVenteLayout.createSequentialGroup()
+                .addContainerGap(32, Short.MAX_VALUE)
+                .addGroup(actionVenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(actionDetails1)
+                    .addComponent(actionDescription1))
+                .addContainerGap())
+        );
+        actionVenteLayout.setVerticalGroup(
+            actionVenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(actionVenteLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(actionDescription1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addComponent(actionDetails1)
+                .addContainerGap())
+        );
+
+        actionClient.setBackground(new java.awt.Color(250, 253, 255));
+        actionClient.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(164, 206, 255), 1, true));
+        actionClient.setForeground(new java.awt.Color(164, 206, 255));
+        actionClient.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        actionClient.setPreferredSize(new java.awt.Dimension(180, 130));
+
+        actionDescription2.setBackground(new java.awt.Color(255, 255, 255));
+        actionDescription2.setFont(new java.awt.Font("Montserrat SemiBold", 0, 14)); // NOI18N
+        actionDescription2.setForeground(new java.awt.Color(118, 130, 142));
+        actionDescription2.setText("Clients");
+
+        actionDetails2.setFont(new java.awt.Font("Montserrat", 0, 13)); // NOI18N
+        actionDetails2.setForeground(new java.awt.Color(118, 130, 142));
+        actionDetails2.setText("20 Clients");
+
+        javax.swing.GroupLayout actionClientLayout = new javax.swing.GroupLayout(actionClient);
+        actionClient.setLayout(actionClientLayout);
+        actionClientLayout.setHorizontalGroup(
+            actionClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(actionClientLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(actionDetails2)
+                .addContainerGap())
+            .addGroup(actionClientLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(actionDescription2)
+                .addContainerGap(103, Short.MAX_VALUE))
+        );
+        actionClientLayout.setVerticalGroup(
+            actionClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(actionClientLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(actionDescription2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addComponent(actionDetails2)
+                .addContainerGap())
+        );
+
+        actionCaissier.setBackground(new java.awt.Color(250, 253, 255));
+        actionCaissier.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(164, 206, 255), 1, true));
+        actionCaissier.setForeground(new java.awt.Color(164, 206, 255));
+        actionCaissier.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        actionCaissier.setPreferredSize(new java.awt.Dimension(180, 130));
+
+        actionDescription3.setBackground(new java.awt.Color(255, 255, 255));
+        actionDescription3.setFont(new java.awt.Font("Montserrat SemiBold", 0, 14)); // NOI18N
+        actionDescription3.setForeground(new java.awt.Color(118, 130, 142));
+        actionDescription3.setText("Caissiers");
+
+        actionDetails3.setFont(new java.awt.Font("Montserrat", 0, 13)); // NOI18N
+        actionDetails3.setForeground(new java.awt.Color(118, 130, 142));
+        actionDetails3.setText("10 Caissiers");
+
+        javax.swing.GroupLayout actionCaissierLayout = new javax.swing.GroupLayout(actionCaissier);
+        actionCaissier.setLayout(actionCaissierLayout);
+        actionCaissierLayout.setHorizontalGroup(
+            actionCaissierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(actionCaissierLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(actionDetails3)
+                .addContainerGap())
+            .addGroup(actionCaissierLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(actionDescription3)
+                .addContainerGap(88, Short.MAX_VALUE))
+        );
+        actionCaissierLayout.setVerticalGroup(
+            actionCaissierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(actionCaissierLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(actionDescription3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addComponent(actionDetails3)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout mainActionContainerLayout = new javax.swing.GroupLayout(mainActionContainer);
+        mainActionContainer.setLayout(mainActionContainerLayout);
+        mainActionContainerLayout.setHorizontalGroup(
+            mainActionContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainActionContainerLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(mainActionContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(mainActionContainerLayout.createSequentialGroup()
+                        .addComponent(actionVoiture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(actionVente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(mainActionContainerLayout.createSequentialGroup()
+                        .addComponent(actionClient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(actionCaissier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+        );
+        mainActionContainerLayout.setVerticalGroup(
+            mainActionContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainActionContainerLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(mainActionContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(actionVoiture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(actionVente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50)
+                .addGroup(mainActionContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(actionClient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(actionCaissier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        mainContainer.add(mainActionContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 138, 862, 478));
 
         menuFichier.setText("Fichier");
         menuFichier.setToolTipText("");
@@ -562,7 +715,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(navigationContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(mainContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(statusContainer, javax.swing.GroupLayout.DEFAULT_SIZE, 1024, Short.MAX_VALUE)
+            .addComponent(statusContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -637,6 +790,16 @@ public class Home extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_actionQuitterKeyPressed
 
+    private void searchVehiculeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchVehiculeButtonActionPerformed
+        // TODO add your handling code here:
+        searchVehiculeField.getText();
+    }//GEN-LAST:event_searchVehiculeButtonActionPerformed
+
+    private void addVehiculeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehiculeMousePressed
+        // TODO add your handling code here:
+        switchPanel(mainActionContainer, addVehiculeContainer); //Check again
+    }//GEN-LAST:event_addVehiculeMousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -673,8 +836,6 @@ public class Home extends javax.swing.JFrame {
     }
 
     /* All methods */
-    //<editor-fold defaultstate="collapsed" desc=" Collections of all methods used in the application ">
-    
     //Method setColor
     private void setColor(JPanel panel) {
         panel.setBackground(new Color(79, 134, 214));
@@ -695,26 +856,33 @@ public class Home extends javax.swing.JFrame {
             indicator.setOpaque(false);
         }
     }
-    
+
     //Method switchPanel
-    private void switchPanel(JPanel currentPanel, JPanel targetPanel){
-        //We make the current Panel disappear
+    private void switchPanel(JPanel currentPanel, JPanel targetPanel) {
         currentPanel.setVisible(false);
-        //We set the next Panel appear
         targetPanel.setVisible(true);
     }
-    
-    //</editor-fold>
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar MenuBar;
+    private javax.swing.JPanel actionCaissier;
+    private javax.swing.JPanel actionClient;
+    private javax.swing.JLabel actionDescription;
+    private javax.swing.JLabel actionDescription1;
+    private javax.swing.JLabel actionDescription2;
+    private javax.swing.JLabel actionDescription3;
+    private javax.swing.JLabel actionDetails;
+    private javax.swing.JLabel actionDetails1;
+    private javax.swing.JLabel actionDetails2;
+    private javax.swing.JLabel actionDetails3;
     private javax.swing.JMenuItem actionQuitter;
+    private javax.swing.JPanel actionVente;
+    private javax.swing.JPanel actionVoiture;
     private javax.swing.JLabel actualPanel;
     private javax.swing.JButton addVehicule;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPanel linkCaissier;
     private javax.swing.JLabel linkCaissierText;
@@ -727,11 +895,14 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel linkVoiture;
     private javax.swing.JLabel linkVoitureText;
     private javax.swing.JLabel logo;
+    private javax.swing.JPanel mainActionContainer;
     private javax.swing.JPanel mainContainer;
+    private javax.swing.JButton makeResult;
     private javax.swing.JMenu menuAide;
     private javax.swing.JMenu menuEdition;
     private javax.swing.JMenu menuFichier;
     private javax.swing.JPanel navigationContainer;
+    private javax.swing.JButton searchVehiculeButton;
     private javax.swing.JTextField searchVehiculeField;
     private javax.swing.JLabel searchVehiculeLabel;
     private javax.swing.JPanel separator;

@@ -1,22 +1,25 @@
 package com.wlabs.parkoo.backend;
 
 import java.sql.Connection;
+import java.util.List;
 
 /**
- * @param <T>
+ * @param <Object>
  * @licence MIT Licence
  * @author Wilfried AGO
  * @email wilfriedago@pm.me
  */
-public abstract class DAO<T> {
+public abstract class DAO<Object> {
 
     public Connection connect = ConnectionDB.getInstance();
 
-    public abstract T findById(int id);
+    public abstract List<Object> selectAll();
 
-    public abstract T create(T obj);
+    public abstract Object findById(String id);
 
-    public abstract T update(T obj);
+    public abstract int insert(Object obj);
 
-    public abstract void delete(T obj);
+    public abstract int update(Object obj);
+
+    public abstract int delete(Object obj);
 }

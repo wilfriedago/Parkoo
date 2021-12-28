@@ -9,20 +9,20 @@ import java.util.Date;
  */
 public class Vente {
 
-    private String id;
+    private String idVe;
     private Date dateVente;
     private double prix;
 
-    //Class Constructor
-    public Vente(String id, Date dateVente, double prix) {
-        this.id = id;
+    //Constructor
+    public Vente(String idVe, Date dateVente, double prix) {
+        this.idVe = idVe;
         this.dateVente = dateVente;
         this.prix = prix;
     }
 
     //Getters
-    public String getId() {
-        return id;
+    public String getIdVe() {
+        return idVe;
     }
 
     public Date getDateVente() {
@@ -34,8 +34,8 @@ public class Vente {
     }
 
     //Setters
-    public void setId(String id) {
-        this.id = id;
+    public void setIdVe(String idVe) {
+        this.idVe = idVe;
     }
 
     public void setDateVente(Date dateVente) {
@@ -44,12 +44,6 @@ public class Vente {
 
     public void setPrix(double prix) {
         this.prix = prix;
-    }
-
-    //Méthode toString
-    @Override
-    public String toString() {
-        return "Vente{" + "id=" + id + ", dateVente=" + dateVente + ", prix=" + prix + '}';
     }
 
 }
