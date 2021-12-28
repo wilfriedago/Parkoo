@@ -19,12 +19,10 @@ public class VoitureDAO extends DAO<Voiture> {
 
         try {
             ResultSet allDBCars = this.connect.createStatement().executeQuery("SELECT * FROM public.voitures");
-
+            //Temporary Voiture object
+            Voiture car = null;
             //While we still have records
             while (allDBCars.next()) {
-                //Temporary Voiture object
-                Voiture car = null;
-
                 car.setNumSerie(allDBCars.getString("vonumserie"));
                 car.setMarque(allDBCars.getString("vomarque"));
                 car.setModele(allDBCars.getString("vomodele"));
@@ -35,14 +33,10 @@ public class VoitureDAO extends DAO<Voiture> {
                 //And now, we add this car to the list Vrooum! Vrooom! :D
                 allCarsList.add(car);
             }
-            allDBCars.close();
             this.connect.createStatement().close();
             this.connect.close();
-
-            //Simple check
-            System.out.println("Sucess Request\n" + allCarsList.size() + " row selected !");
         } catch (SQLException e) {
-            System.out.println("\n" + e);
+            System.out.println(e);
         }
         return allCarsList;
     }
@@ -53,12 +47,11 @@ public class VoitureDAO extends DAO<Voiture> {
         try {
             PreparedStatement findVoiture = this.connect.prepareStatement("SELECT * FROM public.voitures WHERE vonumserie = '?'");
             findVoiture.setString(1, id);
-            car = (Voiture) findVoiture.executeQuery();
 
-            //Simple check
-            System.out.println(car.toString());
+            car = (Voiture) findVoiture.executeQuery();
+            this.connect.close();
         } catch (SQLException e) {
-            System.out.println("\n" + e);
+            System.out.println(e);
         }
         return car;
     }
@@ -76,12 +69,9 @@ public class VoitureDAO extends DAO<Voiture> {
             insertVoiture.setDouble(6, obj.getPrixVente());
 
             resultOfQuery = insertVoiture.executeUpdate();
-
-            //Simple check
-            System.out.println("Sucess Request\n" + resultOfQuery + " row inserted !");
         } catch (SQLException e) {
             resultOfQuery = 0;
-            System.out.println("\n" + e);
+            System.out.println(e);
         }
         return resultOfQuery;
     }
@@ -99,12 +89,10 @@ public class VoitureDAO extends DAO<Voiture> {
             updateVoiture.setDouble(6, obj.getPrixVente());
 
             resultOfQuery = updateVoiture.executeUpdate();
-
-            //Simple check
-            System.out.println("Sucess Request\n" + resultOfQuery + " row updated !");
+            this.connect.close();
         } catch (SQLException e) {
             resultOfQuery = 0;
-            System.out.println("\n" + e);
+            System.out.println(e);
         }
         return resultOfQuery;
     }
@@ -117,12 +105,10 @@ public class VoitureDAO extends DAO<Voiture> {
             deleteVoiture.setString(1, obj.getNumSerie());
 
             resultOfQuery = deleteVoiture.executeUpdate();
-
-            //Simple check
-            System.out.println("Sucess Request\n" + resultOfQuery + " row deleted !");
+            this.connect.close();
         } catch (SQLException e) {
             resultOfQuery = 0;
-            System.out.println("\n" + e);
+            System.out.println(e);
         }
         return resultOfQuery;
     }

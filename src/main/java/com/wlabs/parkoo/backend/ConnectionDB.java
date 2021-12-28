@@ -19,16 +19,14 @@ public class ConnectionDB {
     public static Connection getInstance() {
         try {
             if (connection == null) {
-                try {
-                    Class.forName("org.postgresql.Driver");
-                } catch (ClassNotFoundException e) {
-
-                }
+                Class.forName("org.postgresql.Driver");
                 connection = DriverManager.getConnection(URL, USER, PASSWORD);
                 System.out.println("Sucessfully connected to the database !\n");
             }
         } catch (SQLException e) {
-            System.out.println("Unable to connect to the database ! \n" + e);
+            System.out.println("Unable to connect to the database !\n");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Unable to load the driver !\n");
         }
         return connection;
     }
