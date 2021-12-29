@@ -1,7 +1,8 @@
 package com.wlabs.parkoo.backend.database;
 
 import com.wlabs.parkoo.backend.Voiture;
-import com.wlabs.parkoo.backend.VoitureDAO;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @licence MIT Licence
@@ -10,20 +11,28 @@ import com.wlabs.parkoo.backend.VoitureDAO;
  */
 public class TestDAO {
 
-    public static void main(String[] args) {
+    public static Voiture findVoitureById(String numSerie) {
         VoitureDAO voitureDAO = new VoitureDAO();
-        //Test INSERT
-        Voiture gwagon = new Voiture("gw300", "toyota", "gwagon5655", "rouge", 5000.5, 60000);
 
-        try {
-            if (voitureDAO.insert(gwagon) > 0) {
-                System.out.println("Big OK !\n\n");
-            } else {
-                System.out.println("Big Error !");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+        if (voitureDAO.findById(numSerie) != null) {
+            return voitureDAO.findById(numSerie);
+        } else {
+            return null;
         }
+    }
+
+    public static int deleteCar(String numSerie) {
+        VoitureDAO voitureDAO = new VoitureDAO();
+        return voitureDAO.delete(numSerie);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(findVoitureById("gw300").toString());
+        
+        
+        //System.out.println(deleteCar("gw300")+" suppression");
+        
+        
 
     }
 }

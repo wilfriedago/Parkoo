@@ -1,4 +1,4 @@
-package com.wlabs.parkoo.backend;
+package com.wlabs.parkoo.backend.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -21,12 +21,12 @@ public class ConnectionDB {
             if (connection == null) {
                 Class.forName("org.postgresql.Driver");
                 connection = DriverManager.getConnection(URL, USER, PASSWORD);
-                System.out.println("Sucessfully connected to the database !\n");
+                System.out.println("Sucessfully connected to the database !");
             }
         } catch (SQLException e) {
-            System.out.println("Unable to connect to the database !\n");
+            System.out.println("Unable to connect to the database !");
         } catch (ClassNotFoundException e) {
-            System.out.println("Unable to load the driver !\n");
+            System.out.println("Unable to load the driver !");
         }
         return connection;
     }

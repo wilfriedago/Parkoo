@@ -1,6 +1,5 @@
 package com.wlabs.parkoo.backend;
 
-
 /**
  * @licence MIT Licence
  * @author Wilfried AGO
@@ -78,12 +77,13 @@ public class Voiture {
     //Methods
     @Override
     public String toString() {
-        return "NumSerie : " + numSerie
+        return " NumSerie : " + numSerie
                 + "\n Marque : " + marque
                 + "\n Modele : " + modele
                 + "\n Couleur : " + couleur
                 + "\n PrixAchat : " + prixAchat
-                + "\n PrixVente : " + prixVente;
+                + "\n PrixVente : " + prixVente
+                + "\n";
     }
 
 }

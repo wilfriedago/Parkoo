@@ -1,5 +1,6 @@
-package com.wlabs.parkoo.backend;
+package com.wlabs.parkoo.backend.database;
 
+import com.wlabs.parkoo.backend.Voiture;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,22 +20,13 @@ public class VoitureDAO extends DAO<Voiture> {
 
         try {
             ResultSet allDBCars = this.connect.createStatement().executeQuery("SELECT * FROM public.voitures");
-            //Temporary Voiture object
-            Voiture car = null;
-            //While we still have records
-            while (allDBCars.next()) {
-                car.setNumSerie(allDBCars.getString("vonumserie"));
-                car.setMarque(allDBCars.getString("vomarque"));
-                car.setModele(allDBCars.getString("vomodele"));
-                car.setCouleur(allDBCars.getString("vocouleur"));
-                car.setPrixAchat(allDBCars.getDouble("voprixachat"));
-                car.setPrixVente(allDBCars.getDouble("voprixvente"));
-
-                //And now, we add this car to the list Vrooum! Vrooom! :D
-                allCarsList.add(car);
-            }
             this.connect.createStatement().close();
             this.connect.close();
+
+            while (allDBCars.next()) {
+                Voiture car = new Voiture(allDBCars.getString("vonumserie"), allDBCars.getString("vomarque"), allDBCars.getString("vomodele"), allDBCars.getString("vocouleur"), allDBCars.getDouble("voprixachat"), allDBCars.getDouble("voprixvente"));
+                allCarsList.add(car);
+            }            
         } catch (SQLException e) {
             System.out.println(e);
         }
@@ -43,24 +35,33 @@ public class VoitureDAO extends DAO<Voiture> {
 
     @Override
     public Voiture findById(String id) {
-        Voiture car = null;
         try {
-            PreparedStatement findVoiture = this.connect.prepareStatement("SELECT * FROM public.voitures WHERE vonumserie = '?'");
+            PreparedStatement findVoiture = this.connect.prepareStatement("SELECT * FROM public.voitures WHERE vonumserie = ? LIMIT 1");
             findVoiture.setString(1, id);
 
-            car = (Voiture) findVoiture.executeQuery();
-            this.connect.close();
+            ResultSet result = findVoiture.executeQuery();
+
+            if (result.next()) {
+                Voiture car = new Voiture(result.getString("vonumserie"), result.getString("vomarque"), result.getString("vomodele"), result.getString("vocouleur"), result.getDouble("voprixachat"), result.getDouble("voprixvente"));
+                System.out.println("Query successfully run ! 1 row affected.\n");
+                this.connect.close();
+                return car;
+            } else {
+                System.out.println("Query successfully run ! 0 row affected.\n");
+                this.connect.close();
+                return null;
+            }
         } catch (SQLException e) {
             System.out.println(e);
+            return null;
         }
-        return car;
     }
 
     @Override
     public int insert(Voiture obj) {
         int resultOfQuery;
         try {
-            PreparedStatement insertVoiture = this.connect.prepareStatement("INSERT INTO public.voitures(vonumserie, vomarque, vomodele, vocouleur, voprixachat, voprixvente) VALUES ('?', '?', '?', '?', ?, ?)");
+            PreparedStatement insertVoiture = this.connect.prepareStatement("INSERT INTO public.voitures VALUES (?, ?, ?, ?, ?, ?)");
             insertVoiture.setString(1, obj.getNumSerie());
             insertVoiture.setString(2, obj.getMarque());
             insertVoiture.setString(3, obj.getModele());
@@ -80,7 +81,7 @@ public class VoitureDAO extends DAO<Voiture> {
     public int update(Voiture obj) {
         int resultOfQuery;
         try {
-            PreparedStatement updateVoiture = this.connect.prepareStatement("UPDATE public.voitures SET vonumserie = ?, vomarque = ?, vomodele = ?, vocouleur = ?, voprixachat = ?, voprixvente = ?Z WHERE <condition>");
+            PreparedStatement updateVoiture = this.connect.prepareStatement("UPDATE public.voitures SET vonumserie = ?, vomarque = ?, vomodele = ?, vocouleur = ?, voprixachat = ?, voprixvente = ? WHERE <condition>");
             updateVoiture.setString(1, obj.getNumSerie());
             updateVoiture.setString(2, obj.getMarque());
             updateVoiture.setString(4, obj.getCouleur());
@@ -98,11 +99,11 @@ public class VoitureDAO extends DAO<Voiture> {
     }
 
     @Override
-    public int delete(Voiture obj) {
+    public int delete(String id) {
         int resultOfQuery;
         try {
-            PreparedStatement deleteVoiture = this.connect.prepareStatement("DELETE FROM public.voitures WHERE vonumserie ='?'");
-            deleteVoiture.setString(1, obj.getNumSerie());
+            PreparedStatement deleteVoiture = this.connect.prepareStatement("DELETE FROM public.voitures WHERE vonumserie = ?");
+            deleteVoiture.setString(1, id);
 
             resultOfQuery = deleteVoiture.executeUpdate();
             this.connect.close();

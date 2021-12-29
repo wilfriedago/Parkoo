@@ -1,5 +1,6 @@
-package com.wlabs.parkoo.backend;
+package com.wlabs.parkoo.backend.database;
 
+import com.wlabs.parkoo.backend.Client;
 import java.util.List;
 
 /**
@@ -29,7 +30,7 @@ public class ClientDAO extends DAO<Client> {
     }
 
     @Override
-    public int delete(Client obj) {
+    public int delete(String id) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 

@@ -1,6 +1,7 @@
 package com.wlabs.parkoo.frontend;
 
 //Custom package
+import com.wlabs.parkoo.backend.database.VoitureDAO;
 import com.wlabs.parkoo.backend.*;
 
 //Java package
@@ -854,12 +855,11 @@ public class Home extends javax.swing.JFrame {
 
     private void searchVehiculeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchVehiculeButtonActionPerformed
         // TODO add your handling code here:
-        searchVehiculeField.getText();
+        Voiture searchVehiculeResult = findVoitureById(searchVehiculeField.getText());
     }//GEN-LAST:event_searchVehiculeButtonActionPerformed
 
     private void addVehiculeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehiculeMousePressed
         // TODO add your handling code here:
-        switchPanel(mainActionContainer, addVehiculeContainer); //Check again
     }//GEN-LAST:event_addVehiculeMousePressed
 
     /**
