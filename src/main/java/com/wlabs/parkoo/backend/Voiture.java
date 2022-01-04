@@ -75,6 +75,10 @@ public class Voiture {
     }
 
     //Methods
+    public double getBenefice() {
+        return prixVente - prixAchat;
+    }
+
     @Override
     public String toString() {
         return " NumSerie : " + numSerie

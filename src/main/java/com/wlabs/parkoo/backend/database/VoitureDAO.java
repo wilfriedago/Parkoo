@@ -20,16 +20,17 @@ public class VoitureDAO extends DAO<Voiture> {
 
         try {
             ResultSet allDBCars = this.connect.createStatement().executeQuery("SELECT * FROM public.voitures");
-            this.connect.createStatement().close();
-            this.connect.close();
 
             while (allDBCars.next()) {
                 Voiture car = new Voiture(allDBCars.getString("vonumserie"), allDBCars.getString("vomarque"), allDBCars.getString("vomodele"), allDBCars.getString("vocouleur"), allDBCars.getDouble("voprixachat"), allDBCars.getDouble("voprixvente"));
                 allCarsList.add(car);
-            }            
+            }
+            this.connect.createStatement().close();
+            this.connect.close();
         } catch (SQLException e) {
             System.out.println(e);
         }
+
         return allCarsList;
     }
 
@@ -41,13 +42,11 @@ public class VoitureDAO extends DAO<Voiture> {
 
             ResultSet result = findVoiture.executeQuery();
 
-            if (result.next()) {
+            if (result.next() && !"".equals(result.getString("vonumserie"))) {
                 Voiture car = new Voiture(result.getString("vonumserie"), result.getString("vomarque"), result.getString("vomodele"), result.getString("vocouleur"), result.getDouble("voprixachat"), result.getDouble("voprixvente"));
-                System.out.println("Query successfully run ! 1 row affected.\n");
                 this.connect.close();
                 return car;
             } else {
-                System.out.println("Query successfully run ! 0 row affected.\n");
                 this.connect.close();
                 return null;
             }

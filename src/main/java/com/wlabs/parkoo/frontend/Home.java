@@ -1,11 +1,12 @@
 package com.wlabs.parkoo.frontend;
 
 //Custom package
-import com.wlabs.parkoo.backend.database.VoitureDAO;
 import com.wlabs.parkoo.backend.*;
+import com.wlabs.parkoo.backend.database.*;
 
 //Java package
 import java.awt.Color;
+import java.util.List;
 import javax.swing.JPanel;
 
 /**
@@ -898,6 +899,7 @@ public class Home extends javax.swing.JFrame {
     }
 
     /* All methods */
+    //Frontend Method
     //Method setColor
     private void setColor(JPanel panel) {
         panel.setBackground(new Color(79, 134, 214));
@@ -923,6 +925,47 @@ public class Home extends javax.swing.JFrame {
     private void switchPanel(JPanel currentPanel, JPanel targetPanel) {
         currentPanel.setVisible(false);
         targetPanel.setVisible(true);
+    }
+
+    //Backend Method
+    //Method sellectAllFrom
+    public List selectAllFrom(String myTable) {
+        int myTableIndex = 0;
+        String[] allTables = {"caissiers", "clients", " ventes", "voitures"};
+
+        for (int i = 0; i < allTables.length; i++) {
+            if (myTable.equals(allTables[i])) {
+                myTableIndex = i;
+            } else {
+                myTableIndex = -1;
+            }
+        }
+
+        switch (myTableIndex) {
+            case 0 -> {
+                CaissierDAO caissierDAO = new CaissierDAO();
+                List<Caissier> allCashiers = caissierDAO.selectAll();
+                return allCashiers;
+            }
+            case 1 -> {
+                ClientDAO clientDAO = new ClientDAO();
+                List<Client> allCustomers = clientDAO.selectAll();
+                return allCustomers;
+            }
+            case 2 -> {
+                VenteDAO venteDAO = new VenteDAO();
+                List<Vente> allSales = venteDAO.selectAll();
+                return allSales;
+            }
+            case 3 -> {
+                VoitureDAO voitureDAO = new VoitureDAO();
+                List<Voiture> allCars = voitureDAO.selectAll();
+                return allCars;
+            }
+            default -> {
+                return null;
+            }
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
